@@ -62,3 +62,43 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// ------------------ FADE-IN ON SCROLL ------------------
+document.addEventListener("DOMContentLoaded", function () {
+  const observerOptions = { threshold: 0.2 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+});
+
+// ------------------ ABC CARD REVEAL ------------------
+document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".abc-card");
+
+  const revealOnScroll = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }, index * 150);
+        }
+      });
+    },
+    { threshold: 0.15 },
+  );
+
+  cards.forEach((card) => {
+    card.style.opacity = "0";
+    card.style.transform = "translateY(40px)";
+    card.style.transition = "all 0.6s ease-out";
+    revealOnScroll.observe(card);
+  });
+});

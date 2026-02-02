@@ -16,6 +16,7 @@
 
 body {
   background: var(--white);
+  color: var(--c4);
 }
 
 /* ----------------- NAVBAR ----------------- */
@@ -56,7 +57,7 @@ body {
 }
 
 .nav-center a:hover {
-  color: var(--c3);
+  color: var(--c2);
 }
 
 /* DESKTOP DROPDOWN */
@@ -184,7 +185,7 @@ body {
   }
 
   .dropdown ul li a:hover {
-    color: var(--c3);
+    color: var(--c2);
   }
 
   .menu-toggle {
@@ -253,33 +254,447 @@ body {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* RESPONSIVE HERO */
-@media (max-width: 992px) {
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-  .hero-content .btn-primary {
-    padding: 12px 30px;
-    font-size: 1rem;
-  }
+/* ------------------ NETWORK ------------------ */
+.network {
+  padding: 80px 20px;
+  background: var(--white);
 }
 
+.network-banner {
+  background: linear-gradient(90deg, var(--c1), var(--c2));
+  border-radius: 15px;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  gap: 40px;
+}
+
+.network-content h2 {
+  font-size: 2.2rem;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 10px 25px;
+  border: 1px solid var(--white);
+  border-radius: 50px;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--c1);
+}
+
+.network-stats {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.stat-item {
+  color: var(--white);
+  text-align: center;
+  flex: 1;
+  position: relative;
+}
+
+.stat-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.stat-item h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.stat-item p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  text-transform: capitalize;
+}
+
+/* ------------------ EVERYWHERE SECTION ------------------ */
+.everywhere-section {
+  position: relative;
+  min-height: 80vh;
+  background: url("https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=2000")
+    no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.everywhere-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.everywhere-content {
+  max-width: 800px;
+  text-align: center;
+  color: var(--white);
+}
+
+/* ------------------ SIMPLE ABC ------------------ */
+.simple-abc.light-theme {
+  padding: 100px 20px;
+  background-color: var(--white);
+  text-align: center;
+}
+
+.abc-header h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--c4);
+}
+
+.abc-header h3 {
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--c1);
+}
+
+.underline {
+  width: 50px;
+  height: 4px;
+  background: var(--c2);
+  margin: 20px auto 60px;
+  border-radius: 10px;
+}
+
+.abc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.abc-card {
+  background: var(--white);
+  border: 1px solid var(--c3);
+  border-radius: 24px;
+  padding: 50px 30px;
+  box-shadow: 0 10px 30px rgba(124, 201, 31, 0.1);
+  transition: all 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.abc-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(124, 201, 31, 0.2);
+  border-color: var(--c4);
+}
+
+.card-icon {
+  height: 100px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.icon-img {
+  width: 70px;
+  filter: grayscale(1) brightness(0.5);
+}
+
+.auto-charge-text {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--c1);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.neon-pulse {
+  animation: neon-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes neon-glow {
+  from {
+    text-shadow:
+      0 0 5px var(--white),
+      0 0 10px var(--white),
+      0 0 15px var(--c1),
+      0 0 20px var(--c1);
+  }
+  to {
+    text-shadow:
+      0 0 10px var(--white),
+      0 0 20px var(--c2),
+      0 0 30px var(--c2),
+      0 0 40px var(--c2),
+      0 0 50px var(--c2);
+  }
+}
+/* ------------------ LOCATION PARTNERS ------------------ */
+.location-partners {
+  padding: 80px 0;
+  background-color: var(--white);
+  overflow: hidden; /* Hide the scrollbar */
+}
+
+.partners-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333; /* Dark gray for contrast on white */
+  margin-bottom: 50px;
+  letter-spacing: 0.5px;
+}
+
+/* Slider Container */
+.logo-slider {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+/* Gradient Fades for edges (Optional, for smooth entry/exit) */
+.logo-slider::before,
+.logo-slider::after {
+  background: linear-gradient(
+    to right,
+    var(--white) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 15%;
+  z-index: 2;
+}
+
+.logo-slider::before {
+  left: 0;
+  top: 0;
+}
+.logo-slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+/* The Track that Moves */
+.slider-track {
+  display: flex;
+  width: calc(
+    250px * 12
+  ); /* 250px width per slide * total slides (including dupes) */
+  animation: scroll 40s linear infinite;
+}
+
+.slide {
+  width: 250px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 50px;
+  object-fit: contain;
+  filter: grayscale(100%); /* Makes all logos match */
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.slide img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Animation Keyframes */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 6));
+  } /* Move by width of half the slides */
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .hero-content h1 {
+  .partners-title {
+    font-size: 1.5rem;
+  }
+  .slider-track {
+    width: calc(180px * 12);
+  }
+  .slide {
+    width: 180px;
+  }
+  @keyframes scroll {
+    100% {
+      transform: translateX(calc(-180px * 6));
+    }
+  }
+}
+/* ------------------ FRANCHISE SECTION ------------------ */
+.franchise-section {
+  padding: 100px 20px;
+  background-color: var(--white);
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--c4); /* updated */
+  margin-bottom: 5px;
+}
+
+.section-header .subtitle {
+  font-size: 1.1rem;
+  color: var(--c2); /* updated */
+  font-style: italic;
+}
+
+.accent-line {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--c1), var(--c4));
+  margin: 15px auto 50px;
+  border-radius: 5px;
+}
+
+/* Grid Layout */
+.franchise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Card Styling */
+.franchise-card {
+  position: relative;
+  border-radius: 30px;
+  padding: 60px 40px;
+  text-align: left;
+  overflow: hidden;
+  background: var(--white); /* updated */
+  border: 1px solid var(--c3); /* updated */
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: flex-end;
+  min-height: 320px;
+}
+
+/* Background Gradients using your colors */
+.partner-card {
+  background: linear-gradient(
+    135deg,
+    var(--white) 0%,
+    rgba(124, 201, 31, 0.1) 100%
+  );
+}
+
+.franchisee-card {
+  background: linear-gradient(
+    135deg,
+    var(--white) 0%,
+    rgba(8, 112, 232, 0.1) 100%
+  );
+}
+
+.franchise-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.card-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.tag {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--c3); /* updated */
+  margin-bottom: 10px;
+}
+
+.franchise-card h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--c4); /* updated */
+  margin-bottom: 15px;
+}
+
+.franchise-card p {
+  font-size: 1rem;
+  color: var(--c2); /* updated */
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+/* Button Styling */
+.btn-outline-dark {
+  display: inline-block;
+  padding: 12px 25px;
+  border: 2px solid var(--c4); /* updated */
+  border-radius: 50px;
+  color: var(--c4); /* updated */
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+  background: var(--c4); /* updated */
+  color: var(--white);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .section-header h2 {
     font-size: 2rem;
   }
-  .hero-content .btn-primary {
-    padding: 10px 25px;
-    font-size: 0.95rem;
+  .franchise-grid {
+    grid-template-columns: 1fr;
   }
-}
-
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 1.6rem;
-  }
-  .hero-content .btn-primary {
-    padding: 8px 20px;
-    font-size: 0.9rem;
+  .franchise-card {
+    min-height: auto;
+    padding: 40px 30px;
   }
 }
