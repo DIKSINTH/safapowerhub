@@ -4,18 +4,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const arrows = document.querySelectorAll(".mobile-arrow");
   const parentLinks = document.querySelectorAll(".parent-link");
 
-  // Toggle mobile menu
   menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
   });
 
-  // Function to toggle dropdown
   function toggleDropdown(element) {
     const parent = element.closest(".has-dropdown");
     const dropdown = parent.querySelector(".dropdown");
     const arrow = parent.querySelector(".mobile-arrow");
 
-    // Close other dropdowns
     document.querySelectorAll(".dropdown").forEach((d) => {
       if (d !== dropdown) d.classList.remove("active");
     });
@@ -24,25 +21,22 @@ document.addEventListener("DOMContentLoaded", function () {
       if (a !== arrow) a.textContent = "+";
     });
 
-    // Toggle current dropdown
     dropdown.classList.toggle("active");
     arrow.textContent = dropdown.classList.contains("active") ? "−" : "+";
   }
 
-  // Arrow click toggles dropdown
   arrows.forEach((arrow) => {
     arrow.addEventListener("click", function (e) {
-      if (window.innerWidth < 992) {
+      if (window.innerWidth <= 768) {
         e.preventDefault();
         toggleDropdown(this);
       }
     });
   });
 
-  // Parent link click toggles dropdown in mobile
   parentLinks.forEach((link) => {
     link.addEventListener("click", function (e) {
-      if (window.innerWidth < 992) {
+      if (window.innerWidth <= 768) {
         e.preventDefault();
         const arrow = this.parentElement.querySelector(".mobile-arrow");
         toggleDropdown(arrow);
