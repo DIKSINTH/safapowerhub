@@ -1,0 +1,596 @@
+:root {
+  --c1: #7cc91f;
+  --c2: #39b74b;
+  --c3: #1dad65;
+  --c4: #0870e8;
+  --white: #ffffff;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: var(--white);
+  color: var(--c4);
+}
+
+/* ----------------- NAVBAR ----------------- */
+/* ----------------- PILL NAVBAR ----------------- */
+.navbar-container {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  padding: 0 20px;
+}
+
+.navbar {
+  width: auto; /* Shrink to fit content */
+  min-width: 650px; /* Ensures enough space for links */
+  height: 50px;
+  display: flex; /* Changed from grid to flex for better pill alignment */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 35px;
+  background: rgba(255, 255, 255, 0.95); /* Slight transparency */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  backdrop-filter: blur(10px); /* Glass effect */
+  border-radius: 50px; /* The Pill Shape */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.logo img {
+  height: 45px; /* Scaled down for the smaller pill bar */
+  width: auto;
+  scale: calc(150%);
+}
+
+/* KEEPING YOUR EXACT LINK HOVER LOGIC */
+.nav-center {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0 20px;
+}
+
+.nav-center a {
+  text-decoration: none;
+  color: var(--c4);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.nav-center a:hover {
+  color: var(--c2); /* Your original hover color */
+}
+
+/* Adjust Dropdown position for the Pill Bar */
+.dropdown {
+  position: absolute;
+  top: 50px; /* Adjusted slightly higher for the pill bar */
+  left: 50%;
+  transform: translateX(-50%) translateY(15px);
+  width: 500px;
+  background: var(--white);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  display: flex;
+  gap: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* MOBILE FIX FOR PILL */
+@media (max-width: 992px) {
+  .navbar {
+    width: 100%;
+    min-width: unset;
+    border-radius: 15px; /* Square off slightly on mobile */
+  }
+
+  .navbar-container {
+    top: 10px;
+  }
+}
+
+/* NAV LINKS CENTER */
+.nav-center {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.nav-center li {
+  position: relative;
+}
+
+.nav-center a {
+  text-decoration: none;
+  color: var(--c4);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-center a:hover {
+  color: var(--c2);
+}
+
+/* DESKTOP DROPDOWN */
+.dropdown {
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%) translateY(15px);
+  width: 550px;
+  background: var(--white);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  display: flex;
+  gap: 25px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.has-dropdown:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.dropdown ul {
+  list-style-type: none;
+}
+.dropdown ul li {
+  padding-top: 15px;
+}
+
+.dropdown img.desktop-img {
+  width: 180px;
+  height: 140px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* NAV ITEM FLEX */
+.nav-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-arrow {
+  display: none;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* MENU TOGGLE */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--c4);
+}
+
+/* ----------------- MOBILE ----------------- */
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .nav-center {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px 20px;
+    display: none;
+    z-index: 99;
+  }
+
+  .nav-center.active {
+    display: flex;
+  }
+
+  .mobile-arrow {
+    display: block;
+  }
+
+  /* MOBILE DROPDOWN: text-only */
+  .has-dropdown:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .dropdown {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    box-shadow: none;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dropdown.active {
+    display: flex;
+  }
+
+  .dropdown img.desktop-img {
+    display: none; /* hide images on mobile */
+  }
+
+  .dropdown ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 0;
+  }
+
+  .dropdown ul li a {
+    color: var(--c4);
+    font-weight: 500;
+    padding: 10px 0;
+    display: block;
+    transition: color 0.3s;
+  }
+
+  .dropdown ul li a:hover {
+    color: var(--c2);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* ----------------- HERO SECTION ----------------- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+    url("https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=2072")
+      center/cover no-repeat;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  color: var(--white);
+  padding-left: 20%;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+#hero2 {
+  font-weight: lighter;
+}
+
+.hero-content .btn-primary {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    var(--c1),
+    var(--c2),
+    var(--c3),
+    var(--c4)
+  );
+  transition:
+    transform 0.3s,
+    background 0.3s;
+}
+
+.hero-content .btn-primary:hover {
+  transform: translateY(-3px);
+  background: var(--c4);
+}
+
+/* Who We Are Content Styling */
+
+.who-content {
+  max-width: 900px;
+}
+
+.who-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.who-content .underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--c1),
+    var(--c2),
+    var(--c3),
+    var(--c4)
+  );
+  margin-bottom: 30px;
+  border-radius: 5px;
+  margin-left: 0; /* FIXED */
+}
+
+.who-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: var(--white);
+  opacity: 0.95;
+}
+
+/* ----------------- TABLET ----------------- */
+@media (max-width: 992px) {
+  .hero {
+    padding-left: 10%;
+  }
+
+  .who-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .who-content p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ----------------- MOBILE FIX ----------------- */
+@media (max-width: 600px) {
+  .hero {
+    height: auto; /* FIX: prevent 100vh overflow */
+    padding: 100px 20px; /* Balanced padding */
+    justify-content: center; /* Center content */
+    text-align: left; /* Keep text clean */
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .who-content h1 {
+    font-size: 2rem;
+  }
+
+  .who-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .who-content .underline {
+    margin-left: 0; /* FIX underline alignment */
+  }
+}
+
+/* ---------------- TRANSITION SECTION ---------------- */
+
+.transition-section {
+  padding: 100px 5%;
+  background: linear-gradient(
+    135deg,
+    var(--c4) 0%,
+    var(--c3) 40%,
+    var(--c2) 100%
+  );
+  color: var(--white);
+}
+
+.transition-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* Left Image */
+
+.transition-image {
+  flex: 1;
+}
+
+.transition-image img {
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* Right Content */
+
+.transition-content {
+  flex: 1;
+}
+
+.transition-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.transition-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  opacity: 0.95;
+}
+/* Tablet */
+@media (max-width: 992px) {
+  .transition-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .transition-content h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .transition-section {
+    padding: 70px 5%;
+  }
+
+  .transition-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .transition-content p {
+    font-size: 1.2rem;
+  }
+
+  .transition-image img {
+    border-radius: 18px;
+  }
+}
+
+/* ---------------- WHAT WE DO SECTION ---------------- */
+
+.what-section {
+  padding: 100px 5%;
+  background: linear-gradient(
+    135deg,
+    var(--c3) 0%,
+    var(--c4) 60%,
+    var(--c2) 100%
+  );
+  color: var(--white);
+}
+
+.what-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* Left Content */
+
+.what-content {
+  flex: 1;
+}
+
+.what-content h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.what-content h4 {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.what-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  opacity: 0.95;
+}
+
+/* Right Image */
+
+.what-image {
+  flex: 1;
+}
+
+.what-image img {
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease;
+}
+
+.what-image img:hover {
+  transform: scale(1.03);
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .what-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .what-content h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .what-section {
+    padding: 70px 5%;
+  }
+
+  .what-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .what-content p {
+    font-size: 0.9rem;
+  }
+
+  .what-image img {
+    border-radius: 18px;
+  }
+}

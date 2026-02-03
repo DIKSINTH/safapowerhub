@@ -1,0 +1,519 @@
+:root {
+  --c1: #7cc91f;
+  --c2: #39b74b;
+  --c3: #1dad65;
+  --c4: #0870e8;
+  --white: #ffffff;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: var(--white);
+  color: var(--c4);
+}
+
+/* ----------------- NAVBAR ----------------- */
+/* ----------------- PILL NAVBAR ----------------- */
+.navbar-container {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  padding: 0 20px;
+}
+
+.navbar {
+  width: auto; /* Shrink to fit content */
+  min-width: 650px; /* Ensures enough space for links */
+  height: 50px;
+  display: flex; /* Changed from grid to flex for better pill alignment */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 35px;
+  background: rgba(255, 255, 255, 0.95); /* Slight transparency */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  backdrop-filter: blur(10px); /* Glass effect */
+  border-radius: 50px; /* The Pill Shape */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.logo img {
+  height: 45px; /* Scaled down for the smaller pill bar */
+  width: auto;
+  scale: calc(150%);
+}
+
+/* KEEPING YOUR EXACT LINK HOVER LOGIC */
+.nav-center {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0 20px;
+}
+
+.nav-center a {
+  text-decoration: none;
+  color: var(--c4);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.nav-center a:hover {
+  color: var(--c2); /* Your original hover color */
+}
+
+/* Adjust Dropdown position for the Pill Bar */
+.dropdown {
+  position: absolute;
+  top: 50px; /* Adjusted slightly higher for the pill bar */
+  left: 50%;
+  transform: translateX(-50%) translateY(15px);
+  width: 500px;
+  background: var(--white);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  display: flex;
+  gap: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* MOBILE FIX FOR PILL */
+@media (max-width: 992px) {
+  .navbar {
+    width: 100%;
+    min-width: unset;
+    border-radius: 15px; /* Square off slightly on mobile */
+  }
+
+  .navbar-container {
+    top: 10px;
+  }
+}
+
+/* NAV LINKS CENTER */
+.nav-center {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.nav-center li {
+  position: relative;
+}
+
+.nav-center a {
+  text-decoration: none;
+  color: var(--c4);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-center a:hover {
+  color: var(--c2);
+}
+
+/* DESKTOP DROPDOWN */
+.dropdown {
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%) translateY(15px);
+  width: 550px;
+  background: var(--white);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  display: flex;
+  gap: 25px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.has-dropdown:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.dropdown ul {
+  list-style-type: none;
+}
+.dropdown ul li {
+  padding-top: 15px;
+}
+
+.dropdown img.desktop-img {
+  width: 180px;
+  height: 140px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* NAV ITEM FLEX */
+.nav-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-arrow {
+  display: none;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* MENU TOGGLE */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--c4);
+}
+
+/* ----------------- MOBILE ----------------- */
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .nav-center {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px 20px;
+    display: none;
+    z-index: 99;
+  }
+
+  .nav-center.active {
+    display: flex;
+  }
+
+  .mobile-arrow {
+    display: block;
+  }
+
+  /* MOBILE DROPDOWN: text-only */
+  .has-dropdown:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .dropdown {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    box-shadow: none;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dropdown.active {
+    display: flex;
+  }
+
+  .dropdown img.desktop-img {
+    display: none; /* hide images on mobile */
+  }
+
+  .dropdown ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 0;
+  }
+
+  .dropdown ul li a {
+    color: var(--c4);
+    font-weight: 500;
+    padding: 10px 0;
+    display: block;
+    transition: color 0.3s;
+  }
+
+  .dropdown ul li a:hover {
+    color: var(--c2);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* ---------------- LOCATION PARTNER SECTION ---------------- */
+
+.location-partner {
+  padding: 100px 20%;
+  background: linear-gradient(
+    135deg,
+    var(--c4) 0%,
+    var(--c3) 50%,
+    var(--c2) 100%
+  );
+  display: flex;
+  justify-content: center;
+}
+
+/* Card Container */
+.partner-card {
+  width: 100%;
+  max-width: 2000px;
+  border-radius: 25px;
+  padding: 50px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+
+  /* Glass style using brand colors */
+  background: linear-gradient(
+    120deg,
+    rgba(8, 112, 232, 0.4),
+    rgba(29, 173, 101, 0.4)
+  );
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* LEFT IMAGE */
+.partner-image img {
+  width: 240px;
+  height: auto;
+  transition: 0.4s ease;
+}
+
+.partner-image img:hover {
+  transform: scale(1.05);
+}
+
+/* CONTENT */
+.partner-content {
+  flex: 1;
+  color: var(--white);
+}
+
+.partner-content h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.partner-content p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .partner-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 50px 30px;
+  }
+
+  .partner-content {
+    padding: 0;
+  }
+
+  .partner-content h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .partner-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .partner-content p {
+    font-size: 0.9rem;
+  }
+
+  .partner-image img {
+    width: 180px;
+  }
+}
+
+/* ----------------- OUR BELIEF SECTION ----------------- */
+
+.belief-section {
+  padding: 100px 8%;
+  background: radial-gradient(circle at top left, var(--c1), var(--c4) 60%);
+  color: var(--white);
+}
+
+.belief-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* LEFT CONTENT */
+.belief-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.belief-content h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.belief-underline {
+  width: 90px;
+  height: 4px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--c1),
+    var(--c2),
+    var(--c3),
+    var(--c4)
+  );
+}
+
+.belief-intro {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  opacity: 0.95;
+}
+
+.belief-content h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--c4);
+}
+
+.belief-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  opacity: 0.9;
+}
+
+/* RIGHT IMAGE */
+.belief-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.belief-image img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease;
+}
+
+.belief-image img:hover {
+  transform: scale(1.03);
+}
+
+/* ----------------- TABLET ----------------- */
+
+@media (max-width: 992px) {
+  .belief-container {
+    gap: 40px;
+  }
+
+  .belief-content h2 {
+    font-size: 2.4rem;
+  }
+
+  .belief-content p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ----------------- MOBILE ----------------- */
+
+@media (max-width: 768px) {
+  .belief-container {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .belief-section {
+    padding: 80px 6%;
+  }
+
+  .belief-content h2 {
+    font-size: 2rem;
+  }
+
+  .belief-image img {
+    margin-top: 20px;
+    max-width: 100%;
+  }
+}
+
+/* ------------------ EVERYWHERE SECTION ------------------ */
+.everywhere-section {
+  position: relative;
+  min-height: 80vh;
+  background: url("https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=2000")
+    no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.everywhere-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.everywhere-content {
+  max-width: 1200px;
+  text-align: center;
+  color: var(--white);
+}
