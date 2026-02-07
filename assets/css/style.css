@@ -826,6 +826,137 @@ body {
     padding: 40px 30px;
   }
 }
+/* ===============================
+   EV CTA IMAGE SECTION
+================================= */
+
+.ev-cta-section {
+  position: relative;
+  width: 100%;
+  padding: 120px 10%;
+  background: url("https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=2072");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Overlay using ONLY your brand color */
+.ev-cta-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--c3);
+  opacity: 0.4; /* allowed — no new color added */
+  z-index: 0;
+}
+
+/* Container */
+.ev-cta-container {
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Content */
+.ev-cta-content {
+  max-width: 650px;
+  color: var(--white);
+}
+
+.ev-cta-content h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: var(--white);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--c1);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.description {
+  font-size: 1.1rem;
+  margin-bottom: 35px;
+  line-height: 1.7;
+  color: var(--white);
+}
+
+/* Button */
+.ev-btn {
+  display: inline-block;
+  padding: 14px 35px;
+  background: var(--c1);
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.ev-btn:hover {
+  background: var(--c4);
+  color: var(--white);
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .ev-cta-section {
+    padding: 100px 8%;
+  }
+
+  .ev-cta-content h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ev-cta-section {
+    padding: 80px 6%;
+    background-attachment: scroll;
+    text-align: center;
+  }
+
+  .ev-cta-content {
+    margin: auto;
+  }
+
+  .ev-cta-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .ev-cta-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .ev-btn {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+}
 
 /* ---------------- FOOTER ---------------- */
 
@@ -833,6 +964,10 @@ body {
   background: var(--c3);
   color: var(--white);
   padding-top: 60px;
+}
+#footer-img {
+  height: 100px;
+  scale: calc(250%);
 }
 
 /* TOP CONTAINER */
@@ -968,6 +1103,19 @@ body {
     border-radius: 18px;
   }
 
+  #footer-img {
+    height: 70px !important;
+    width: auto !important;
+    transform: scale(1) !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  .footer-tagline {
+    font-size: 0.9rem;
+    padding: 20px 6%;
+  }
+
   .footer-container {
     flex-direction: column;
     align-items: center;
@@ -1025,8 +1173,199 @@ body {
     font-size: 0.8rem;
   }
 }
+/* FOOTER TAGLINE */
 
-#footer-img {
-  height: 100px;
-  scale: calc(250%);
+.footer-tagline {
+  text-align: center;
+  padding: 25px 10%;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--white);
+}
+
+/* ================= SUSTAINABILITY SECTION ================= */
+
+.sustainability {
+  padding: 120px 8%;
+  background: var(--color-5);
+}
+
+.sustainability-container {
+  display: grid;
+  grid-template-columns: 1fr 480px 1fr;
+  align-items: center;
+  gap: 70px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ================= LEFT SIDE ================= */
+
+.s-left {
+  max-width: 520px;
+}
+
+.s-left h2 {
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-1);
+  margin-bottom: 30px;
+}
+
+.s-left p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-4);
+  margin-bottom: 35px;
+}
+
+.green-line {
+  width: 90px;
+  height: 4px;
+  background: var(--color-2);
+  margin-bottom: 45px;
+}
+
+.info-card {
+  background: var(--color-3);
+  padding: 35px;
+  border-radius: 14px;
+  border: 1px solid var(--color-2);
+  max-width: 360px;
+}
+
+.info-card .icon {
+  font-size: 28px;
+  margin-bottom: 18px;
+  color: var(--color-2);
+}
+
+.info-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--color-1);
+}
+
+.info-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-4);
+}
+
+/* ================= CENTER IMAGE ================= */
+
+.s-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.s-center img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  display: block;
+}
+
+/* ================= RIGHT SIDE ================= */
+
+.s-right {
+  max-width: 520px;
+}
+
+.s-right .feature {
+  margin-bottom: 60px;
+  padding-top: 35px;
+  position: relative;
+}
+
+.s-right .feature:first-child {
+  padding-top: 0;
+}
+
+.s-right .feature::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  border-top: 2px dotted var(--color-2);
+}
+
+.s-right .feature:first-child::before {
+  display: none;
+}
+
+.s-right .feature h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-1);
+  margin-bottom: 15px;
+}
+
+.s-right .feature p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--color-4);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+  .sustainability-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 60px;
+  }
+
+  .s-center {
+    order: -1;
+  }
+
+  .s-left,
+  .s-right {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .info-card {
+    margin: 0 auto;
+  }
+
+  .s-right .feature::before {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .sustainability {
+    padding: 80px 6%;
+  }
+
+  .s-left h2 {
+    font-size: 2.2rem;
+  }
+
+  .s-left p {
+    font-size: 0.95rem;
+  }
+
+  .s-right .feature {
+    margin-bottom: 45px;
+  }
+
+  .s-right .feature h4 {
+    font-size: 1.1rem;
+  }
+
+  .s-right .feature p {
+    font-size: 0.9rem;
+  }
 }
