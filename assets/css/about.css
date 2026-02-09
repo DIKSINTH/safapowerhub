@@ -419,12 +419,7 @@ body {
 
 .transition-section {
   padding: 100px 5%;
-  background: linear-gradient(
-    135deg,
-    var(--c4) 0%,
-    var(--c3) 40%,
-    var(--c2) 100%
-  );
+  background: white;
   color: var(--white);
 }
 
@@ -453,11 +448,13 @@ body {
 
 .transition-content {
   flex: 1;
+  color: var(--c2);
 }
 
 .transition-content h2 {
   font-size: 2rem;
   font-weight: 700;
+  color: var(--c4);
   line-height: 1.2;
   margin-bottom: 25px;
 }
@@ -503,12 +500,7 @@ body {
 
 .what-section {
   padding: 100px 5%;
-  background: linear-gradient(
-    135deg,
-    var(--c3) 0%,
-    var(--c4) 60%,
-    var(--c2) 100%
-  );
+  background: white;
   color: var(--white);
 }
 
@@ -525,12 +517,14 @@ body {
 
 .what-content {
   flex: 1;
+  color: var(--c1);
 }
 
 .what-content h2 {
   font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 25px;
+  color: var(--c4);
 }
 
 .what-content h4 {

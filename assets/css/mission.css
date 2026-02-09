@@ -271,12 +271,8 @@ body {
 
 .location-partner {
   padding: 100px 20%;
-  background: linear-gradient(
-    135deg,
-    var(--c4) 0%,
-    var(--c3) 50%,
-    var(--c2) 100%
-  );
+  background: white;
+
   display: flex;
   justify-content: center;
 }
@@ -317,7 +313,7 @@ body {
 /* CONTENT */
 .partner-content {
   flex: 1;
-  color: var(--white);
+  color: linear-gradient(135deg, var(--c4) 0%, var(--c3) 50%, var(--c2) 100%);
 }
 
 .partner-content h2 {
@@ -370,7 +366,7 @@ body {
 
 .belief-section {
   padding: 100px 8%;
-  background: radial-gradient(circle at top left, var(--c1), var(--c4) 60%);
+  background: white;
   color: var(--white);
 }
 
@@ -386,6 +382,7 @@ body {
 .belief-content {
   flex: 1;
   min-width: 300px;
+  color: var(--c1);
 }
 
 .belief-content h2 {

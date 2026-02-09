@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Safa Power Hub</title>
-    <link rel="icon" href="./assets/images/logo.png" />
-    <link rel="stylesheet" href="./assets/css/about.css" />
+    <title>EV Charging Station Map</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="./assets/css/locations.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -87,120 +90,19 @@
         </div>
       </nav>
     </div>
-    <!-- HERO SECTION -->
-    <section class="hero" data-aos="fade-up">
-      <div class="hero-overlay"></div>
+    <div id="map-container">
+      <div id="map"></div>
 
-      <div class="hero-content who-content">
-        <h1>Who We Are</h1>
-        <div class="underline"></div>
-
-        <p>
-          Safa Power Hub, based in Tamil Nadu, is driving India’s EV revolution
-          by building a reliable and accessible EV charging network. With a
-          mission to reduce fossil fuel dependence and promote cleaner cities,
-          Safa Power Hub is trusted nationwide for its reliable service.
-        </p>
-
-        <p>
-          Backed by world-class equipment, expert engineering, 24/7 support, and
-          an intuitive user interface, Safa Power Hub ensures a seamless
-          charging experience. Safa Power Hub carefully selects strategic
-          locations for its chargers—places where people naturally pause in
-          their daily lives, such as restaurants, shopping centers, cafes, and
-          convenience stops for maximum ease.
-        </p>
-
-        <p>
-          As of May 2025, Safa Power Hub operates over 500 charge points across
-          South India and has electrified over 15,000+ kms of highways, with
-          steady expansion underway across the country.
-        </p>
-      </div>
-    </section>
-
-    <!-- TRANSITION SECTION -->
-    <section class="transition-section">
-      <div class="transition-container">
-        <!-- Left Image -->
-        <div class="transition-image">
-          <img
-            src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=1200"
-            alt="EV Charging Station"
-          />
+      <div id="details-panel">
+        <div class="panel-header">
+          <span>Station Details</span>
+          <span class="close-btn" onclick="closePanel()">&times;</span>
         </div>
-
-        <!-- Right Content -->
-        <div class="transition-content">
-          <h2>
-            Accelerating The Transition To <br />
-            Electric Mobility In India
-          </h2>
-
-          <p>
-            India is at a pivotal moment in its journey toward sustainability,
-            and Safa Power Hub is here to lead the charge. The transportation
-            sector is one of the largest contributors to the country's
-            greenhouse gas (GHG) emissions, exacerbating urban pollution and
-            climate change.
-          </p>
-
-          <p>
-            With India's growing focus on renewable energy and electric vehicles
-            (EVs), the opportunity to make a difference is immense. The faster
-            we transition to driving on clean energy, the sooner we can address
-            environmental challenges and create a cleaner, healthier future for
-            all.
-          </p>
-
-          <p>That's where Safa Power Hub comes in.</p>
+        <div class="panel-body">
+          <div id="content-area"></div>
         </div>
       </div>
-    </section>
-
-    <!-- WHAT WE DO SECTION -->
-    <section class="what-section">
-      <div class="what-container">
-        <!-- Left Content -->
-        <div class="what-content">
-          <h2>What We Do</h2>
-
-          <p>
-            Safa Power Hub exists to empower people to embrace electric mobility
-            as a vital step toward curbing pollution and tackling the global
-            climate crisis. Driving change through public charging innovation
-            for individuals to confidently switch to electric vehicles,
-            accessible and reliable charging infrastructure is crucial.
-          </p>
-
-          <h4>That's why:</h4>
-
-          <p>
-            We develop strategically located, user-friendly public charging
-            stations to support seamless EV adoption.
-          </p>
-
-          <p>
-            We focus on creating smart, efficient designs for easy access and
-            convenient charging experiences.
-          </p>
-
-          <p>
-            We aim to provide the best possible public charging experience for
-            all EV users. Together, we can build the momentum needed to make
-            electric mobility the norm in India.
-          </p>
-        </div>
-
-        <!-- Right Image -->
-        <div class="what-image">
-          <img
-            src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=1200"
-            alt="EV Charging Station"
-          />
-        </div>
-      </div>
-    </section>
+    </div>
 
     <!-- FOOTER SECTION -->
     <footer class="footer">
@@ -266,6 +168,7 @@
       </div>
     </footer>
 
-    <script src="./assets/js/about.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./assets/js/locations.js"></script>
   </body>
 </html>

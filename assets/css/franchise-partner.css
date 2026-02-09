@@ -396,13 +396,8 @@ body {
 
 .location-types {
   padding: 80px 5%;
-  background: linear-gradient(
-    135deg,
-    var(--c4) 0%,
-    var(--c3) 40%,
-    var(--c2) 100%
-  );
-  color: var(--white);
+  background: white;
+  color: var(--c4);
 }
 
 .location-container {
@@ -417,7 +412,7 @@ body {
   margin-bottom: 60px;
   position: relative;
   display: inline-block;
-  color: var(--white);
+  color: var(--c4);
 }
 
 .underline {
@@ -441,7 +436,7 @@ body {
 .location-item i {
   font-size: 50px;
   margin-bottom: 15px;
-  color: var(--white);
+  color: var(--c4);
   transition: 0.3s ease;
 }
 
@@ -449,7 +444,7 @@ body {
   font-size: 1rem;
   font-weight: 500;
   margin: 0;
-  color: var(--white);
+  color: var(--c2);
 }
 
 /* Hover Effect */
@@ -496,12 +491,7 @@ body {
 
 .franchise-benefits {
   padding: 100px 5%;
-  background: linear-gradient(
-    135deg,
-    var(--c4) 0%,
-    var(--c3) 50%,
-    var(--c2) 100%
-  );
+  background: var(--white);
   display: flex;
   justify-content: center;
 }
@@ -524,7 +514,7 @@ body {
 .benefits-header {
   text-align: center;
   margin-bottom: 60px;
-  color: var(--white);
+  color: var(--c4);
 }
 
 .benefits-header p {
@@ -557,7 +547,7 @@ body {
   padding-left: 25px;
   margin-bottom: 20px;
   font-size: 1rem;
-  color: var(--white);
+  color: var(--c4);
   line-height: 1.6;
 }
 
@@ -807,4 +797,127 @@ body {
 #footer-img {
   height: 100px;
   scale: calc(250%);
+}
+
+/* ---------------- LOCATION PARTNER SECTION ---------------- */
+
+.location-partner {
+  padding: 100px 5%;
+  background: white;
+  display: flex;
+  justify-content: center;
+}
+
+/* Card Container */
+.partner-card {
+  width: 100%;
+  max-width: 1300px;
+  border-radius: 25px;
+  padding: 50px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+
+  /* Glass style using brand colors */
+  background: linear-gradient(
+    120deg,
+    rgba(8, 112, 232, 0.4),
+    rgba(29, 173, 101, 0.4)
+  );
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* LEFT IMAGE */
+.partner-image img {
+  width: 240px;
+  height: auto;
+  transition: 0.4s ease;
+}
+
+.partner-image img:hover {
+  transform: scale(1.05);
+}
+
+/* CONTENT */
+.partner-content {
+  flex: 1;
+  padding: 0 40px;
+  color: var(--c4);
+}
+
+.partner-content h5 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.partner-content h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.partner-content p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* BUTTON */
+.partner-btn a {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--c4);
+  border: 2px solid var(--c1);
+  transition: 0.3s ease;
+}
+
+.partner-btn a:hover {
+  background: var(--c1);
+  transform: translateY(-3px);
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .partner-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 50px 30px;
+  }
+
+  .partner-content {
+    padding: 0;
+  }
+
+  .partner-content h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .partner-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .partner-content p {
+    font-size: 0.9rem;
+  }
+
+  .partner-image img {
+    width: 180px;
+  }
+
+  .partner-btn a {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
 }
