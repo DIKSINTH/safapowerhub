@@ -964,11 +964,10 @@ body {
 #page-loader {
   position: fixed;
   inset: 0;
-  background: #000;
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
   transition:
     opacity 0.6s ease,
     visibility 0.6s ease;
