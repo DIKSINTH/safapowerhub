@@ -88,3 +88,28 @@ stations.forEach((station) => {
 map.on("click", () => {
   if (event.target.id === "map") closePanel();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const loader = document.getElementById("page-loader");
+
+  // 🔹 Hide loader when page fully loads
+  window.addEventListener("load", function () {
+    loader.classList.add("hide");
+  });
+
+  // 🔹 Show loader on internal link click
+  document.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const target = link.getAttribute("href");
+
+      if (
+        target &&
+        !target.startsWith("#") &&
+        !target.startsWith("javascript:") &&
+        !link.hasAttribute("target")
+      ) {
+        loader.classList.remove("hide");
+      }
+    });
+  });
+});

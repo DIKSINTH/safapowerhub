@@ -1217,3 +1217,16 @@ body {
   line-height: 1.7;
   color: var(--white);
 }
+
+#ev1 {
+  width: 200px;
+  height: 400px;
+}
+#ev2 {
+  width: 340px;
+  height: 400px;
+}
+#ev5 {
+  width: 290px;
+  height: 400px;
+}
