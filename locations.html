@@ -17,7 +17,7 @@
   <body>
     <!-- SAFA LOADER -->
     <div id="page-loader">
-      <img src="images/loader.png" alt="Loading" class="loader-logo" />
+      <img src="./assets/images/lodaer.png" alt="Loading" class="loader-logo" />
     </div>
 
     <!-- NAVBAR -->
@@ -175,5 +175,31 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="./assets/js/locations.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loader = document.getElementById("page-loader");
+
+        // Hide loader when page fully loads
+        window.addEventListener("load", function () {
+          loader.classList.add("hide");
+        });
+
+        // Show loader when navigating to another internal page
+        document.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", function (e) {
+            const href = link.getAttribute("href");
+
+            if (
+              href &&
+              !href.startsWith("#") &&
+              !href.startsWith("javascript:") &&
+              !link.hasAttribute("target")
+            ) {
+              loader.classList.remove("hide");
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

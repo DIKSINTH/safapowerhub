@@ -16,6 +16,10 @@
     />
   </head>
   <body>
+    <!-- SAFA LOADER -->
+    <div id="page-loader">
+      <img src="./assets/images/lodaer.png" alt="Loading" class="loader-logo" />
+    </div>
     <!-- NAVBAR -->
     <div class="navbar-container">
       <nav class="navbar" data-aos="fade-down">
@@ -520,7 +524,32 @@
         offset: 100,
       });
     </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loader = document.getElementById("page-loader");
 
+        // Hide loader when page fully loads
+        window.addEventListener("load", function () {
+          loader.classList.add("hide");
+        });
+
+        // Show loader when navigating to another internal page
+        document.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", function (e) {
+            const href = link.getAttribute("href");
+
+            if (
+              href &&
+              !href.startsWith("#") &&
+              !href.startsWith("javascript:") &&
+              !link.hasAttribute("target")
+            ) {
+              loader.classList.remove("hide");
+            }
+          });
+        });
+      });
+    </script>
     <script src="./assets/js/location-partner.js"></script>
   </body>
 </html>
