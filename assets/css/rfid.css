@@ -890,15 +890,32 @@ body {
   .footer-container {
     flex-direction: column;
     gap: 40px;
+    align-items: center; /* CENTER EVERYTHING */
+    text-align: center; /* CENTER TEXT */
+  }
+
+  /* FIX LOGO ALIGNMENT */
+  .footer-logo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #footer-img {
+    height: 85px;
+    width: auto;
+    transform: scale(1); /* REMOVE LARGE SCALE */
   }
 
   .footer-links {
     gap: 40px;
+    justify-content: center;
   }
 
   .footer-bottom-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
 
   .legal-links a {

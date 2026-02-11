@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Toggle current dropdown
     dropdown.classList.toggle("active");
-    arrow.textContent = dropdown.classList.contains("active") ? "−" : "+";
+    arrow.textContent = dropdown.classList.contains("active") ? "-" : "+";
   }
 
   // Arrow click toggles dropdown
