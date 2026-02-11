@@ -455,8 +455,8 @@ input:checked + .slider:before {
 /* ---------------- FOOTER ---------------- */
 
 .footer {
-  background: var(--c3);
-  color: var(--white);
+  background: var(--white);
+  color: var(--c4);
   padding-top: 60px;
 }
 #footer-img {
@@ -536,21 +536,21 @@ input:checked + .slider:before {
 
 /* SOCIAL ICONS */
 .social-icons a {
-  color: var(--white);
+  color: var(--c3);
   margin-right: 18px;
   font-size: 1.2rem;
   transition: 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: var(--c1);
+  color: var(--c4);
 }
 
 /* LEGAL LINKS */
 .legal-links a {
   margin-left: 25px;
   text-decoration: none;
-  color: var(--white);
+  color: var(--c3);
   font-size: 0.9rem;
   transition: 0.3s ease;
 }
@@ -691,7 +691,7 @@ input:checked + .slider:before {
   padding: 25px 10%;
   font-size: 1rem;
   line-height: 1.7;
-  color: var(--white);
+  color: var(--c3);
 }
 
 /* =========================
