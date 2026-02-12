@@ -3,11 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>RFID Key</title>
     <link rel="stylesheet" href="./assets/css/rfid.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
     />
   </head>
   <body>
@@ -15,6 +20,7 @@
     <div id="page-loader">
       <img src="./assets/images/lodaer.png" alt="Loading" class="loader-logo" />
     </div>
+
     <!-- NAVBAR -->
     <div class="navbar-container">
       <nav class="navbar" data-aos="fade-down">
@@ -81,33 +87,33 @@
         </div>
       </nav>
     </div>
+
     <!-- RFID Hero Section -->
-    <section class="rfid-hero">
+    <section class="rfid-hero" data-aos="fade-up">
       <div class="rfid-container">
-        <!-- Left Content -->
-        <div class="rfid-content">
+        <div class="rfid-content" data-aos="fade-right" data-aos-delay="200">
           <h1>RFID Key</h1>
           <p>Tap & Charge In Seconds</p>
           <a href="#" class="rfid-btn">Buy Now</a>
         </div>
 
-        <!-- Right Floating Image -->
-        <div class="rfid-image">
+        <div class="rfid-image" data-aos="fade-left" data-aos-delay="400">
           <img src="./assets/images/ev5.png" alt="RFID Key" />
         </div>
       </div>
     </section>
+
     <!-- RFID Features Section -->
-    <section class="rfid-features">
-      <h2 class="rfid-title">RFID KEY</h2>
-      <p class="rfid-subtitle">
+    <section class="rfid-features" data-aos="fade-up">
+      <h2 class="rfid-title" data-aos="fade-down">RFID KEY</h2>
+      <p class="rfid-subtitle" data-aos="fade-up" data-aos-delay="200">
         Prefer RFID for quick access? Get your RFID card and start charging with
         a single tap.
       </p>
 
       <div class="rfid-wrapper">
         <!-- Left Features -->
-        <div class="rfid-side left">
+        <div class="rfid-side left" data-aos="fade-right" data-aos-delay="300">
           <div class="feature-item">
             <div class="dot"></div>
             <div class="feature-text">
@@ -115,7 +121,6 @@
               <p>Authentication</p>
             </div>
           </div>
-
           <div class="feature-item">
             <div class="dot"></div>
             <div class="feature-text">
@@ -126,12 +131,12 @@
         </div>
 
         <!-- Center Image -->
-        <div class="rfid-center">
+        <div class="rfid-center" data-aos="zoom-in" data-aos-delay="500">
           <img src="./assets/images/ev2.png" alt="RFID Key" />
         </div>
 
         <!-- Right Features -->
-        <div class="rfid-side right">
+        <div class="rfid-side right" data-aos="fade-left" data-aos-delay="600">
           <div class="feature-item">
             <div class="dot"></div>
             <div class="feature-text">
@@ -139,7 +144,6 @@
               <p>Work Across All</p>
             </div>
           </div>
-
           <div class="feature-item">
             <div class="dot"></div>
             <div class="feature-text">
@@ -147,7 +151,6 @@
               <p>Assign RFID Cards For Family Or Team Member</p>
             </div>
           </div>
-
           <div class="feature-item">
             <div class="dot"></div>
             <div class="feature-text">
@@ -160,17 +163,15 @@
     </section>
 
     <!-- Tap To Charge Section -->
-    <section class="tap-charge">
+    <section class="tap-charge" data-aos="fade-up">
       <div class="tap-container">
-        <!-- Left Content -->
-        <div class="tap-content">
+        <div class="tap-content" data-aos="fade-right" data-aos-delay="200">
           <h2>Tap To Charge</h2>
           <p>Choose RFID for instant tap-to-charge convenience!</p>
           <a href="#" class="tap-btn">Learn More</a>
         </div>
 
-        <!-- Right Image -->
-        <div class="tap-image">
+        <div class="tap-image" data-aos="fade-left" data-aos-delay="400">
           <img
             style="width: 150px; height: 250px"
             src="./assets/images/ev1.png"
@@ -181,15 +182,13 @@
     </section>
 
     <!-- Charging Simplified Section -->
-    <section class="charging-simplified">
+    <section class="charging-simplified" data-aos="fade-up">
       <div class="cs-container">
-        <!-- Left Image -->
-        <div class="cs-image">
+        <div class="cs-image" data-aos="fade-right" data-aos-delay="200">
           <img src="./assets/images/ev7.png" alt="RFID Card" />
         </div>
 
-        <!-- Center Content -->
-        <div class="cs-content">
+        <div class="cs-content" data-aos="fade-up" data-aos-delay="400">
           <h4>Charging</h4>
           <h2>Simplified</h2>
           <p>
@@ -198,23 +197,20 @@
           </p>
         </div>
 
-        <!-- Right Button -->
-        <div class="cs-btn-wrap">
+        <div class="cs-btn-wrap" data-aos="fade-left" data-aos-delay="600">
           <a href="#" class="cs-btn">Buy Now</a>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER SECTION -->
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-top">
         <div class="footer-container">
-          <!-- LEFT LOGO -->
           <div class="footer-logo">
             <img id="footer-img" src="./assets/images/logo.png" alt="Logo" />
           </div>
 
-          <!-- FOOTER LINKS -->
           <div class="footer-links">
             <ul>
               <li><a href="about.html">About Us</a></li>
@@ -222,14 +218,12 @@
               <li><a href="">Contact Us</a></li>
               <li><a href="#">FAQ</a></li>
             </ul>
-
             <ul>
               <li><a href="#">Career</a></li>
               <li><a href="#">Stories</a></li>
               <li><a href="#">News Room</a></li>
               <li><a href="buy-charger.html">Buy Charger</a></li>
             </ul>
-
             <ul>
               <li><a href="location-partner.html">Location Partner</a></li>
               <li><a href="franchise-partner.html">Franchise Partner</a></li>
@@ -239,13 +233,10 @@
           </div>
         </div>
       </div>
-      <!-- FOOTER TAGLINE -->
       <div class="footer-tagline">
         We provide reliable, compliant, and future-ready EV charging solutions
         for homes, businesses, and commercial locations.
       </div>
-
-      <!-- SOCIAL + LEGAL -->
       <div class="footer-bottom">
         <div class="footer-bottom-container">
           <div class="social-icons">
@@ -269,17 +260,22 @@
       </div>
     </footer>
 
-    <script src="./assets/js/rfid.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
+      AOS.init({
+        once: false,
+        duration: 500,
+        easing: "ease-in-out",
+      });
+
       document.addEventListener("DOMContentLoaded", function () {
         const loader = document.getElementById("page-loader");
 
-        // Hide loader when page fully loads
         window.addEventListener("load", function () {
           loader.classList.add("hide");
         });
 
-        // Show loader when navigating to another internal page
         document.querySelectorAll("a").forEach((link) => {
           link.addEventListener("click", function (e) {
             const href = link.getAttribute("href");
@@ -296,5 +292,6 @@
         });
       });
     </script>
+    <script src="./assets/js/rfid.js"></script>
   </body>
 </html>

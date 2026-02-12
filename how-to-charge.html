@@ -3,11 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>How To Charge</title>
     <link rel="stylesheet" href="./assets/css/how-to-charge.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
     />
   </head>
   <body>
@@ -15,6 +20,7 @@
     <div id="page-loader">
       <img src="./assets/images/lodaer.png" alt="Loading" class="loader-logo" />
     </div>
+
     <!-- NAVBAR -->
     <div class="navbar-container">
       <nav class="navbar" data-aos="fade-down">
@@ -23,7 +29,6 @@
             <img src="./assets/images/logo.png" alt="Logo" />
           </div>
         </div>
-
         <ul class="nav-center" id="navLinks">
           <li><a href="index.html">Home</a></li>
           <li><a href="locations.html">Locations</a></li>
@@ -83,11 +88,11 @@
     </div>
 
     <!-- ================= HOW TO CHARGE SECTION ================= -->
-    <section class="how-charge">
-      <h2 class="section-title">How To Charge?</h2>
+    <section class="how-charge" data-aos="fade-up">
+      <h2 class="section-title" data-aos="fade-down">How To Charge?</h2>
 
       <!-- Tabs -->
-      <div class="charge-tabs">
+      <div class="charge-tabs" data-aos="fade-up" data-aos-delay="200">
         <button class="tab-btn active" data-tab="mobile">Mobile App</button>
         <button class="tab-btn" data-tab="qr">QR Code App</button>
         <button class="tab-btn" data-tab="auto">Autocharge</button>
@@ -98,7 +103,7 @@
 
       <!-- MOBILE APP -->
       <div class="tab-content active" id="mobile">
-        <div class="step">
+        <div class="step" data-aos="fade-right" data-aos-delay="100">
           <img
             style="height: 250px; width: 150px"
             src="./assets/images/ev1.png"
@@ -111,7 +116,7 @@
           </div>
         </div>
 
-        <div class="step">
+        <div class="step" data-aos="fade-right" data-aos-delay="300">
           <img
             src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?q=80&w=800"
             alt=""
@@ -123,7 +128,7 @@
           </div>
         </div>
 
-        <div class="step">
+        <div class="step" data-aos="fade-right" data-aos-delay="500">
           <img
             src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&w=800"
             alt=""
@@ -138,7 +143,7 @@
 
       <!-- QR CODE -->
       <div class="tab-content" id="qr">
-        <div class="step">
+        <div class="step" data-aos="fade-left" data-aos-delay="100">
           <img src="./assets/images/ev4.png" alt="" />
           <div>
             <h4>Step 01</h4>
@@ -147,7 +152,7 @@
           </div>
         </div>
 
-        <div class="step">
+        <div class="step" data-aos="fade-left" data-aos-delay="300">
           <img
             src="https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?q=80&w=800"
             alt=""
@@ -159,7 +164,7 @@
           </div>
         </div>
 
-        <div class="step">
+        <div class="step" data-aos="fade-left" data-aos-delay="500">
           <img
             src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&w=800"
             alt=""
@@ -174,7 +179,7 @@
 
       <!-- AUTOCHARGE -->
       <div class="tab-content" id="auto">
-        <div class="step">
+        <div class="step" data-aos="fade-up" data-aos-delay="100">
           <img src="./assets/images/ev5.png" alt="" />
           <div>
             <h4>Step 01</h4>
@@ -183,7 +188,7 @@
           </div>
         </div>
 
-        <div class="step">
+        <div class="step" data-aos="fade-up" data-aos-delay="300">
           <img src="./assets/images/ev4.png" alt="" />
           <div>
             <h4>Step 02</h4>
@@ -192,7 +197,7 @@
           </div>
         </div>
 
-        <div class="step">
+        <div class="step" data-aos="fade-up" data-aos-delay="500">
           <img src="./assets/images/ev7.png" alt="" />
           <div>
             <h4>How To Enable Autocharge?</h4>
@@ -206,7 +211,7 @@
 
       <!-- RFID -->
       <div class="tab-content" id="rfid">
-        <div class="step">
+        <div class="step" data-aos="fade-right" data-aos-delay="100">
           <img src="./assets/images/ev4.png" alt="" />
           <div>
             <h4>Step 01</h4>
@@ -215,7 +220,7 @@
           </div>
         </div>
 
-        <div class="step">
+        <div class="step" data-aos="fade-right" data-aos-delay="300">
           <img src="./assets/images/ev5.png" alt="" />
           <div>
             <h4>Step 02</h4>
@@ -224,7 +229,7 @@
           </div>
         </div>
 
-        <div class="step">
+        <div class="step" data-aos="fade-right" data-aos-delay="500">
           <img src="./assets/images/ev7.png" alt="" />
           <div>
             <h4>Step 03</h4>
@@ -234,16 +239,14 @@
         </div>
       </div>
     </section>
-    <!-- FOOTER SECTION -->
+
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-top">
         <div class="footer-container">
-          <!-- LEFT LOGO -->
           <div class="footer-logo">
             <img id="footer-img" src="./assets/images/logo.png" alt="Logo" />
           </div>
-
-          <!-- FOOTER LINKS -->
           <div class="footer-links">
             <ul>
               <li><a href="about.html">About Us</a></li>
@@ -251,14 +254,12 @@
               <li><a href="">Contact Us</a></li>
               <li><a href="#">FAQ</a></li>
             </ul>
-
             <ul>
               <li><a href="#">Career</a></li>
               <li><a href="#">Stories</a></li>
               <li><a href="#">News Room</a></li>
               <li><a href="buy-charger.html">Buy Charger</a></li>
             </ul>
-
             <ul>
               <li><a href="location-partner.html">Location Partner</a></li>
               <li><a href="franchise-partner.html">Franchise Partner</a></li>
@@ -268,13 +269,10 @@
           </div>
         </div>
       </div>
-      <!-- FOOTER TAGLINE -->
       <div class="footer-tagline">
         We provide reliable, compliant, and future-ready EV charging solutions
         for homes, businesses, and commercial locations.
       </div>
-
-      <!-- SOCIAL + LEGAL -->
       <div class="footer-bottom">
         <div class="footer-bottom-container">
           <div class="social-icons">
@@ -285,7 +283,6 @@
             <a href="#"><i class="fab fa-x-twitter"></i></a>
             <a href="#"><i class="fab fa-whatsapp"></i></a>
           </div>
-
           <div class="legal-links">
             <a href="#">Terms & Conditions</a>
             <a href="#">Privacy Policy</a>
@@ -293,20 +290,26 @@
             <a href="#">Cookies</a>
           </div>
         </div>
-
         <div class="copyright">© 2026 Safa Power Hub</div>
       </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
+      AOS.init({
+        once: false,
+        duration: 500,
+        easing: "ease-in-out",
+      });
+
       document.addEventListener("DOMContentLoaded", function () {
         const loader = document.getElementById("page-loader");
 
-        // Hide loader when page fully loads
         window.addEventListener("load", function () {
           loader.classList.add("hide");
         });
 
-        // Show loader when navigating to another internal page
         document.querySelectorAll("a").forEach((link) => {
           link.addEventListener("click", function (e) {
             const href = link.getAttribute("href");

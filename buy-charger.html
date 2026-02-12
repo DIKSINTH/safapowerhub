@@ -4,17 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buy Charger</title>
-    <link rel="stylesheet" href="./assets/css/buy-charger.css" />
+
+    <!-- FONTAWESOME -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="./assets/css/buy-charger.css" />
   </head>
   <body>
-    <!-- SAFA LOADER -->
+    <!-- PAGE LOADER -->
     <div id="page-loader">
       <img src="./assets/images/lodaer.png" alt="Loading" class="loader-logo" />
     </div>
+
     <!-- NAVBAR -->
     <div class="navbar-container">
       <nav class="navbar" data-aos="fade-down">
@@ -43,6 +54,7 @@
               </ul>
             </div>
           </li>
+
           <li><a href="buy-charger.html">Buy Charger</a></li>
 
           <li class="has-dropdown">
@@ -81,31 +93,35 @@
         </div>
       </nav>
     </div>
-    <section class="products-section">
-      <h2 class="products-heading">Buy EV Charger</h2>
 
+    <!-- PRODUCTS SECTION -->
+    <section class="products-section" data-aos="fade-up">
+      <h2 class="products-heading" data-aos="fade-down">Buy EV Charger</h2>
       <div class="products-container">
-        <!-- PRODUCT 1 -->
+        <!-- PRODUCT CARDS -->
         <div
           class="product-card"
+          data-aos="fade-up"
+          data-aos-delay="100"
           onclick="
             openProduct(
               'AVEO METALLIC EDITION',
-              ' 3.6 kW AC | 1-Gun | Type-2 ',
+              '3.6 kW AC | 1-Gun | Type-2',
               'High grade ABS build with IP66 Ingress Rating, Multiple charging power options 8A/10A/16A, smart LED Indicator.',
               './assets/images/product1.png',
             )
           "
         >
-          <img src="./assets/images/product1.png" />
+          <img src="./assets/images/product1.png" alt="AVEO METALLIC EDITION" />
           <h3>AVEO METALLIC EDITION</h3>
           <p>3.6 kW AC | 1-Gun | Type-2</p>
           <button>View Details</button>
         </div>
 
-        <!-- PRODUCT 2 -->
         <div
           class="product-card"
+          data-aos="fade-up"
+          data-aos-delay="200"
           onclick="
             openProduct(
               'AVEO Plus',
@@ -115,15 +131,16 @@
             )
           "
         >
-          <img src="./assets/images/product2.png" />
+          <img src="./assets/images/product2.png" alt="AVEO Plus" />
           <h3>AVEO Plus</h3>
           <p>3.6 kW AC | App support | 1-Gun | Type-2</p>
           <button>View Details</button>
         </div>
 
-        <!-- PRODUCT 3 -->
         <div
           class="product-card"
+          data-aos="fade-up"
+          data-aos-delay="300"
           onclick="
             openProduct(
               'Dash',
@@ -133,7 +150,7 @@
             )
           "
         >
-          <img src="./assets/images/product3.png" />
+          <img src="./assets/images/product3.png" alt="Dash" />
           <h3>Dash</h3>
           <p>7.5 kW AC | App support | 1-Gun | Type-2</p>
           <button>View Details</button>
@@ -141,48 +158,56 @@
 
         <div
           class="product-card"
+          data-aos="fade-up"
+          data-aos-delay="400"
           onclick="
             openProduct(
               'Polar Pro',
-              ' 7.5 kW AC | App support | 1-Gun | Type-2 ',
+              '7.5 kW AC | App support | 1-Gun | Type-2',
               'Multi-mode control: RFID/Zevpoint app/Plug & Charge, Switchable Current from 8A to 32A, Schedule charging day & time, Smart 4.3 LED display & indicator, Emergency Stop Button',
               './assets/images/product4.png',
             )
           "
         >
-          <img src="./assets/images/product4.png" />
+          <img src="./assets/images/product4.png" alt="Polar Pro" />
           <h3>Polar Pro</h3>
           <p>7.5 kW AC | App support | 1-Gun | Type-2</p>
           <button>View Details</button>
         </div>
+
         <div
           class="product-card"
+          data-aos="fade-up"
+          data-aos-delay="500"
           onclick="
             openProduct(
               'DUOS Max',
-              ' 22 kW AC | OCPP Enabled | 1-Gun | Type-2 ',
+              '22 kW AC | OCPP Enabled | 1-Gun | Type-2',
               'Multi-mode control: RFID/Zevpoint app/Plug & Charge, Switch b/w Home or Commercial use (One tap OCPP enabled), Switchable Current from 8A to 32A (Three Phase), Schedule charging day & time, Smart 4.3 LED display & indicator, Emergency Stop Button',
               './assets/images/product5.png',
             )
           "
         >
-          <img src="./assets/images/product5.png" />
+          <img src="./assets/images/product5.png" alt="DUOS Max" />
           <h3>DUOS Max</h3>
           <p>22 kW AC | OCPP Enabled | 1-Gun | Type-2</p>
           <button>View Details</button>
         </div>
+
         <div
           class="product-card"
+          data-aos="fade-up"
+          data-aos-delay="600"
           onclick="
             openProduct(
               'Dash AIO',
-              '7.5 kW AC | App support | 1-Gun | Type-2 ',
+              '7.5 kW AC | App support | 1-Gun | Type-2',
               'Switchable Power Connectors (3.6kW/7.5kW), Switchable Current from 6A to 32A, Delay start charging, LED display & indicator',
               './assets/images/product6.png',
             )
           "
         >
-          <img src="./assets/images/product6.png" />
+          <img src="./assets/images/product6.png" alt="Dash AIO" />
           <h3>Dash AIO</h3>
           <p>7.5 kW AC | App support | 1-Gun | Type-2</p>
           <button>View Details</button>
@@ -193,20 +218,20 @@
     <!-- POPUP -->
     <div class="product-popup" id="productPopup">
       <div class="popup-box">
-        <span class="close-btn" onclick="closePopup()">✕</span>
-
-        <img id="popupImg" />
+        <img id="popupImg" alt="Product Image" />
         <h3 id="popupTitle"></h3>
         <p class="power" id="popupPower"></p>
         <p id="popupDesc"></p>
-
-        <button onclick="buyNow()">Buy via WhatsApp</button>
+        <div class="popup-buttons">
+          <button class="close-btn" onclick="closePopup()">✕ Close</button>
+          <button onclick="buyNow()">Buy via WhatsApp</button>
+        </div>
       </div>
     </div>
 
-    <section class="charge-section">
+    <!-- CHARGE SECTION -->
+    <section class="charge-section" data-aos="fade-up" data-aos-delay="100">
       <div class="charge-container">
-        <!-- LEFT CONTENT -->
         <div class="charge-content">
           <p class="charge-sub">Charge</p>
           <h2>Anytime</h2>
@@ -217,22 +242,22 @@
             features.
           </p>
         </div>
-
-        <!-- RIGHT IMAGE -->
         <div class="charge-image">
           <img src="./assets/images/ev8.jpg" alt="EV Charger" />
         </div>
       </div>
     </section>
 
-    <section class="installation-section">
+    <!-- INSTALLATION SECTION -->
+    <section
+      class="installation-section"
+      data-aos="fade-up"
+      data-aos-delay="200"
+    >
       <div class="installation-container">
-        <!-- LEFT IMAGE -->
         <div class="installation-image">
           <img src="./assets/images/ev9.jpg" alt="EV Charger Installation" />
         </div>
-
-        <!-- RIGHT CONTENT -->
         <div class="installation-content">
           <p class="install-sub">Installation</p>
           <h2>Fast & Flexible</h2>
@@ -245,16 +270,13 @@
       </div>
     </section>
 
-    <!-- FOOTER SECTION -->
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-top">
         <div class="footer-container">
-          <!-- LEFT LOGO -->
           <div class="footer-logo">
             <img id="footer-img" src="./assets/images/logo.png" alt="Logo" />
           </div>
-
-          <!-- FOOTER LINKS -->
           <div class="footer-links">
             <ul>
               <li><a href="about.html">About Us</a></li>
@@ -262,14 +284,12 @@
               <li><a href="">Contact Us</a></li>
               <li><a href="#">FAQ</a></li>
             </ul>
-
             <ul>
               <li><a href="#">Career</a></li>
               <li><a href="#">Stories</a></li>
               <li><a href="#">News Room</a></li>
               <li><a href="buy-charger.html">Buy Charger</a></li>
             </ul>
-
             <ul>
               <li><a href="location-partner.html">Location Partner</a></li>
               <li><a href="franchise-partner.html">Franchise Partner</a></li>
@@ -279,13 +299,10 @@
           </div>
         </div>
       </div>
-      <!-- FOOTER TAGLINE -->
       <div class="footer-tagline">
         We provide reliable, compliant, and future-ready EV charging solutions
         for homes, businesses, and commercial locations.
       </div>
-
-      <!-- SOCIAL + LEGAL -->
       <div class="footer-bottom">
         <div class="footer-bottom-container">
           <div class="social-icons">
@@ -296,7 +313,6 @@
             <a href="#"><i class="fab fa-x-twitter"></i></a>
             <a href="#"><i class="fab fa-whatsapp"></i></a>
           </div>
-
           <div class="legal-links">
             <a href="#">Terms & Conditions</a>
             <a href="#">Privacy Policy</a>
@@ -304,37 +320,61 @@
             <a href="#">Cookies</a>
           </div>
         </div>
-
         <div class="copyright">© 2026 Safa Power Hub</div>
       </div>
     </footer>
 
-    <script src="assets/js/buy-charger.js"></script>
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
+      AOS.init({ once: false, duration: 500, easing: "ease-in-out" });
+
+      // PAGE LOADER
       document.addEventListener("DOMContentLoaded", function () {
         const loader = document.getElementById("page-loader");
-
-        // Hide loader when page fully loads
         window.addEventListener("load", function () {
           loader.classList.add("hide");
         });
 
-        // Show loader when navigating to another internal page
-        document.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("click", function (e) {
-            const href = link.getAttribute("href");
+        // MOBILE MENU TOGGLE
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+        menuToggle.addEventListener("click", () =>
+          navLinks.classList.toggle("active"),
+        );
 
-            if (
-              href &&
-              !href.startsWith("#") &&
-              !href.startsWith("javascript:") &&
-              !link.hasAttribute("target")
-            ) {
-              loader.classList.remove("hide");
-            }
+        // MOBILE DROPDOWN TOGGLE
+        document.querySelectorAll(".mobile-arrow").forEach((arrow, i) => {
+          arrow.addEventListener("click", () => {
+            const dropdown = arrow
+              .closest(".has-dropdown")
+              .querySelector(".dropdown");
+            dropdown.classList.toggle("active");
           });
         });
       });
+
+      // PRODUCT POPUP
+      let selectedProduct = "";
+      function openProduct(title, power, desc, img) {
+        document.getElementById("productPopup").style.display = "flex";
+        document.getElementById("popupTitle").innerText = title;
+        document.getElementById("popupPower").innerText = power;
+        document.getElementById("popupDesc").innerText = desc;
+        document.getElementById("popupImg").src = img;
+        selectedProduct = title + " - " + power;
+      }
+      function closePopup() {
+        document.getElementById("productPopup").style.display = "none";
+      }
+      function buyNow() {
+        if (!selectedProduct) return alert("Please select a product first!");
+        const number = "919042594468";
+        const message = encodeURIComponent(
+          "Hello, I want to buy: " + selectedProduct,
+        );
+        window.open(`https://wa.me/${number}?text=${message}`, "_blank");
+      }
     </script>
   </body>
 </html>

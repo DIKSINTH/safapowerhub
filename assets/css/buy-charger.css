@@ -335,6 +335,44 @@ body {
   cursor: pointer;
 }
 
+/* POPUP BUTTONS CONTAINER */
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.popup-buttons button {
+  flex: 1;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s ease;
+}
+
+/* Close button styling */
+.popup-buttons .close-btn {
+  background: var(--c4);
+  color: var(--white);
+}
+
+.popup-buttons .close-btn:hover {
+  background: var(--c3);
+}
+
+/* Buy button styling */
+.popup-buttons button:not(.close-btn) {
+  background: var(--c1);
+  color: var(--white);
+}
+
+.popup-buttons button:not(.close-btn):hover {
+  background: var(--c2);
+}
+
 /* POPUP */
 
 .product-popup {

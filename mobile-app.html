@@ -9,6 +9,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <!-- AOS Library CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- SAFA LOADER -->
@@ -17,7 +22,7 @@
     </div>
     <!-- NAVBAR -->
     <div class="navbar-container">
-      <nav class="navbar" data-aos="fade-down">
+      <nav class="navbar">
         <div class="nav-left">
           <div class="logo">
             <img src="./assets/images/logo.png" alt="Logo" />
@@ -82,10 +87,11 @@
       </nav>
     </div>
 
-    <section class="abc-section">
+    <!-- SECTIONS WITH AOS -->
+    <section class="abc-section" data-aos="fade-up">
       <div class="abc-container">
         <!-- LEFT CONTENT -->
-        <div class="abc-content">
+        <div class="abc-content" data-aos="fade-right" data-aos-delay="200">
           <h2>
             Charging Your EV <br />
             <span>Is Simple As ABC</span>
@@ -93,13 +99,12 @@
 
           <div class="store-buttons">
             <a href="#" class="store-btn"> Google Play Store </a>
-
             <a href="#" class="store-btn outline"> Apple App Store </a>
           </div>
         </div>
 
         <!-- RIGHT IMAGE -->
-        <div class="abc-image">
+        <div class="abc-image" data-aos="zoom-in" data-aos-delay="400">
           <img
             src="https://pngimg.com/uploads/electric_car/electric_car_PNG49.png"
             alt="EV Charging"
@@ -108,17 +113,14 @@
       </div>
     </section>
 
-    <section class="find-section">
+    <section class="find-section" data-aos="fade-up">
       <div class="find-container">
-        <!-- LEFT IMAGE -->
-        <div class="find-image">
+        <div class="find-image" data-aos="zoom-in" data-aos-delay="200">
           <img id="ev1" src="./assets/images/ev1.png" alt="Find Charger Map" />
         </div>
 
-        <!-- RIGHT CONTENT -->
-        <div class="find-content">
+        <div class="find-content" data-aos="fade-left" data-aos-delay="400">
           <h2>Find Charger’s & Status</h2>
-
           <p>
             Find and access 400+ Safa Power Hub chargers with real-time
             availability updates for a hassle-free charging experience. A
@@ -129,29 +131,27 @@
       </div>
     </section>
 
-    <!-- Smart Trip Planner Section (from previous) -->
-    <section class="trip-planner">
+    <section class="trip-planner" data-aos="fade-up">
       <div class="container">
-        <div class="text-content">
+        <div class="text-content" data-aos="fade-right" data-aos-delay="200">
           <h2>Smart Trip Planner</h2>
           <p>
             Plan Your Route With Optimized Charging Stops And Real-Time Station
             Availability.
           </p>
         </div>
-        <div class="image-content">
+        <div class="image-content" data-aos="zoom-in" data-aos-delay="400">
           <img src="./assets/images/ev3.png" alt="Smart Trip Planner" />
         </div>
       </div>
     </section>
 
-    <!-- Charging Stations Section -->
-    <section class="charging-stations">
+    <section class="charging-stations" data-aos="fade-up">
       <div class="container">
-        <div class="image-content">
+        <div class="image-content" data-aos="zoom-in" data-aos-delay="200">
           <img id="ev2" src="./assets/images/ev2.png" alt="Charging Station" />
         </div>
-        <div class="text-content">
+        <div class="text-content" data-aos="fade-left" data-aos-delay="400">
           <h2>Details About Our Stations</h2>
           <p>
             Find The Perfect Charger By Connector Type & Power With Smart
@@ -161,28 +161,27 @@
       </div>
     </section>
 
-    <!-- Live Session Section -->
-    <section class="live-session">
+    <section class="live-session" data-aos="fade-up">
       <div class="container">
-        <div class="text-content">
+        <div class="text-content" data-aos="fade-right" data-aos-delay="200">
           <h2>Live Session’s</h2>
           <p>
             Monitor Your Charging Live In-App PiP Mode, Or Lock Screen—Stay In
             Control Anywhere.
           </p>
         </div>
-        <div class="image-content">
+        <div class="image-content" data-aos="zoom-in" data-aos-delay="400">
           <img src="./assets/images/ev4.png" alt="Live Session" />
         </div>
       </div>
     </section>
-    <!-- Charging History Section -->
-    <section class="charging-history">
+
+    <section class="charging-history" data-aos="fade-up">
       <div class="container">
-        <div class="image-content">
+        <div class="image-content" data-aos="zoom-in" data-aos-delay="200">
           <img id="ev5" src="./assets/images/ev5.png" alt="Charging History" />
         </div>
-        <div class="text-content">
+        <div class="text-content" data-aos="fade-left" data-aos-delay="400">
           <h2>Charging History</h2>
           <p>
             Track Your Past Charging Sessions, Energy Usage, And Costs In One
@@ -191,54 +190,46 @@
         </div>
       </div>
     </section>
-    <!-- Buy RFID Key Section -->
-    <section class="buy-rfid">
+
+    <section class="buy-rfid" data-aos="fade-up">
       <div class="container">
-        <div class="text-content">
+        <div class="text-content" data-aos="fade-right" data-aos-delay="200">
           <h2>Buy RFID Key</h2>
           <p>
             Buy An RFID Key To Simplify Your Charging Time For A Hassle Free
             Charging.
           </p>
         </div>
-        <div class="image-content">
+        <div class="image-content" data-aos="zoom-in" data-aos-delay="400">
           <img src="./assets/images/ev7.png" alt="RFID Key" />
         </div>
       </div>
     </section>
 
-    <!-- Download App Section -->
-    <section class="download-app">
+    <section class="download-app" data-aos="fade-up">
       <div class="download-container">
-        <!-- Phone Image -->
-        <div class="download-image">
+        <div class="download-image" data-aos="zoom-in" data-aos-delay="200">
           <img src="./assets/images/ev6.png" alt="App Preview" />
         </div>
-
-        <!-- Text + Buttons -->
-        <div class="download-content">
+        <div class="download-content" data-aos="fade-left" data-aos-delay="400">
           <h5>Download</h5>
           <h2>The App NOW!</h2>
-
           <div class="store-buttons">
             <a href="#" class="store-btn google-btn"> Google Play </a>
-
             <a href="#" class="store-btn apple-btn"> App Store </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER SECTION -->
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-top">
         <div class="footer-container">
-          <!-- LEFT LOGO -->
           <div class="footer-logo">
             <img id="footer-img" src="./assets/images/logo.png" alt="Logo" />
           </div>
 
-          <!-- FOOTER LINKS -->
           <div class="footer-links">
             <ul>
               <li><a href="about.html">About Us</a></li>
@@ -246,14 +237,12 @@
               <li><a href="">Contact Us</a></li>
               <li><a href="#">FAQ</a></li>
             </ul>
-
             <ul>
               <li><a href="#">Career</a></li>
               <li><a href="#">Stories</a></li>
               <li><a href="#">News Room</a></li>
               <li><a href="buy-charger.html">Buy Charger</a></li>
             </ul>
-
             <ul>
               <li><a href="location-partner.html">Location Partner</a></li>
               <li><a href="franchise-partner.html">Franchise Partner</a></li>
@@ -263,13 +252,10 @@
           </div>
         </div>
       </div>
-      <!-- FOOTER TAGLINE -->
       <div class="footer-tagline">
         We provide reliable, compliant, and future-ready EV charging solutions
         for homes, businesses, and commercial locations.
       </div>
-
-      <!-- SOCIAL + LEGAL -->
       <div class="footer-bottom">
         <div class="footer-bottom-container">
           <div class="social-icons">
@@ -292,6 +278,17 @@
         <div class="copyright">© 2026 Safa Power Hub</div>
       </div>
     </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: false,
+        duration: 500,
+        easing: "ease-in-out",
+      });
+    </script>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const loader = document.getElementById("page-loader");
