@@ -15,6 +15,17 @@
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
       rel="stylesheet"
     />
+    <meta
+      name="description"
+      content="India’s most reliable EV charging network – Safa Power Hub. Find fast, smart and sustainable EV charging stations near you."
+    />
+
+    <meta
+      name="keywords"
+      content="EV charging, EV charger India, electric vehicle charging station, fast charger, Safa Power Hub"
+    />
+
+    <meta name="author" content="Safa Power Hub" />
   </head>
   <body>
     <!-- SAFA LOADER -->
@@ -175,6 +186,7 @@
                 src="https://cdn-icons-png.flaticon.com/512/5602/5602732.png"
                 alt="Mobile App"
                 class="icon-img"
+                loading="lazy"
               />
             </div>
             <h4>MOBILE APP</h4>
@@ -185,10 +197,12 @@
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
                 alt="Google Play"
+                loading="lazy"
               />
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
                 alt="App Store"
+                loading="lazy"
               />
             </div>
           </div>
@@ -211,6 +225,7 @@
                 src="https://cdn-icons-png.flaticon.com/512/9195/9195893.png"
                 alt="RFID"
                 class="icon-img rfid-tilt"
+                loading="lazy"
               />
             </div>
             <h4>RFID KEY</h4>
@@ -289,7 +304,11 @@
         </div>
 
         <div class="s-center" data-aos="zoom-in" data-aos-delay="400">
-          <img src="./assets/images/ev-charger.png" alt="EV Charger" />
+          <img
+            src="./assets/images/ev-charger.png"
+            alt="EV Charger"
+            loading="lazy"
+          />
         </div>
 
         <div class="s-right" data-aos="fade-left" data-aos-delay="200">
@@ -410,18 +429,30 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init({
-        once: false,
+        once: true,
         duration: 500,
         easing: "ease-in-out",
+        startEvent: "load",
+      });
+
+      window.addEventListener("load", function () {
+        loader.classList.add("hide");
+
+        setTimeout(() => {
+          AOS.refreshHard();
+        }, 300);
       });
     </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const loader = document.getElementById("page-loader");
 
-        // Hide loader when page fully loads
         window.addEventListener("load", function () {
           loader.classList.add("hide");
+
+          setTimeout(() => {
+            AOS.refreshHard(); // 🔥 recalculates positions
+          }, 300);
         });
 
         // Show loader when navigating to another internal page

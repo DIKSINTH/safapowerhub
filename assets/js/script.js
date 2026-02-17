@@ -106,11 +106,17 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const loader = document.getElementById("page-loader");
 
-  // 🔹 Hide loader when page fully loads
   window.addEventListener("load", function () {
+    const loader = document.getElementById("page-loader");
     loader.classList.add("hide");
-  });
 
+    setTimeout(() => {
+      AOS.refreshHard();
+    }, 300);
+  });
+  window.addEventListener("load", function () {
+    document.getElementById("page-loader").classList.add("hide");
+  });
   // 🔹 Show loader on internal link click
   document.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", function (e) {

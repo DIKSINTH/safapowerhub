@@ -5,6 +5,14 @@
   --c4: #0870e8;
   --white: #ffffff;
 }
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+section {
+  overflow: hidden;
+}
 
 /* Reset */
 * {
@@ -34,7 +42,7 @@ body {
 
 .navbar {
   width: auto; /* Shrink to fit content */
-  min-width: 650px; /* Ensures enough space for links */
+  min-width: auto; /* Ensures enough space for links */
   height: 50px;
   display: flex; /* Changed from grid to flex for better pill alignment */
   align-items: center;
@@ -331,6 +339,16 @@ body {
   transform: translateY(-3px);
   background: var(--c4);
 }
+@media (max-width: 768px) {
+  .hero {
+    padding-left: 20px;
+    text-align: left;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+}
 
 /* ------------------ NETWORK ------------------ */
 .network {
@@ -457,7 +475,7 @@ body {
 .everywhere-section {
   position: relative;
   min-height: 80vh;
-  background: url("/assets/images/everywhere.jpg") no-repeat center center/cover;
+  background: url("../images/everywhere.jpg") no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -954,22 +972,19 @@ body {
 /* =========================
    SAFA PAGE LOADER
 ========================= */
-
 #page-loader {
   position: fixed;
   inset: 0;
-  background: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition:
-    opacity 0.6s ease,
-    visibility 0.6s ease;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  z-index: 9999;
 }
 
 #page-loader.hide {
   opacity: 0;
   visibility: hidden;
+  transition: 0.5s;
 }
 
 .loader-logo {
